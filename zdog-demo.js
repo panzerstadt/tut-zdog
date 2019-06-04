@@ -1,9 +1,15 @@
+let isSpinning = true;
+
 // create illo
 let illo = new Zdog.Illustration({
   // set canvas with selector
   element: ".zdog-canvas",
   // zoom up 4x
-  zoom: 4
+  zoom: 4,
+  dragRotate: true,
+  onDragStart: () => {
+    isSpinning = false;
+  }
 });
 
 new Zdog.Ellipse({
@@ -27,7 +33,10 @@ new Zdog.Rect({
 
 const animate = () => {
   // rotate illo each frame
-  illo.rotate.y += 0.03;
+  if (isSpinning) {
+    illo.rotate.y += 0.03;
+  }
+
   illo.updateRenderGraph();
 
   requestAnimationFrame(animate);
