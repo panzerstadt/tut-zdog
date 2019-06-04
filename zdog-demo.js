@@ -1,4 +1,5 @@
 let isSpinning = true;
+let t = undefined;
 
 // create illo
 let illo = new Zdog.Illustration({
@@ -9,6 +10,12 @@ let illo = new Zdog.Illustration({
   dragRotate: true,
   onDragStart: () => {
     isSpinning = false;
+    if (t) clearTimeout(t);
+  },
+  onDragEnd: () => {
+    t = setTimeout(() => {
+      isSpinning = true;
+    }, 1000);
   }
 });
 
