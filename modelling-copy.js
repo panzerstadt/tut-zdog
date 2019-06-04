@@ -32,7 +32,14 @@ const modellingCopy = () => {
     color: orange
   });
 
-  rect.copy({
+  new Zdog.Shape({
+    addTo: rect,
+    translate: { z: 20 },
+    stroke: 32,
+    color: garnet
+  });
+
+  rect.copyGraph({
     // overwrite options
     translate: { x: 48 },
     color: eggplant
