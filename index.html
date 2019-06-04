@@ -6,7 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <style>
-      .zdog-canvas {
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .zdog-canvas,
+      .zdog-canvas2 {
         background-color: blanchedalmond;
         border-radius: 15px;
         box-shadow: 1px 2px 12px rgba(0, 0, 0, 0.062);
@@ -14,9 +20,13 @@
     </style>
   </head>
   <body>
-    <p>tutorial</p>
+    <p>zdog tutorial code</p>
+    <h1>Getting Started</h1>
     <canvas class="zdog-canvas" width="240" height="240"></canvas>
+    <br />
+    <canvas class="zdog-canvas2" width="240" height="240"></canvas>
     <script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
-    <script src="zdog-demo.js"></script>
+    <script src="getting-started.js"></script>
+    <script src="modelling-child-shapes-to-copying.js"></script>
   </body>
 </html>
