@@ -1,24 +1,26 @@
 // create illo
 let illo = new Zdog.Illustration({
   // set canvas with selector
-  element: ".zdog-canvas"
+  element: ".zdog-canvas",
+  // zoom up 4x
+  zoom: 4
 });
 
 new Zdog.Ellipse({
   addTo: illo,
-  diameter: 80,
-  translate: { z: 40 },
-  stroke: 20,
+  diameter: 20,
+  translate: { z: 10 },
+  stroke: 5,
   color: "#636"
 });
 
 new Zdog.Rect({
   addTo: illo,
-  width: 80,
-  height: 80,
+  width: 20,
+  height: 20,
   // position further back
-  translate: { z: -40 },
-  stroke: 12,
+  translate: { z: -10 },
+  stroke: 3,
   color: "#e62",
   fill: true
 });
