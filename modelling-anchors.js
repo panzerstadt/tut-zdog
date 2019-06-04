@@ -1,4 +1,4 @@
-const modelling = () => {
+const modellingAnchors = () => {
   const orange = "#e62";
   const garnet = "#c25";
   const eggplant = "#636";
@@ -9,7 +9,7 @@ const modelling = () => {
   // create illo
   let illo = new Zdog.Illustration({
     // set canvas with selector
-    element: ".zdog-canvas2",
+    element: "#canvas3",
     zoom: 1,
     dragRotate: true,
     onDragStart: () => {
@@ -29,46 +29,34 @@ const modelling = () => {
     color: eggplant
   });
 
-  let zCircle = new Zdog.Ellipse({
+  let zAnchor = new Zdog.Anchor({
     addTo: illo,
+    scale: 1.5,
     translate: { z: 40 },
-    diameter: 20,
-    quarters: 2,
-    closed: true,
-    stroke: 8,
-    scale: 1,
-    fill: true,
+    rotate: { z: -Zdog.TAU / 8 }
+  });
+  new Zdog.Shape({
+    addTo: zAnchor,
+    path: [{}, zAnchor.translate.copy().multiply({ z: -1 })],
+    scale: 1 / zAnchor.scale.z,
+    stroke: 2,
     color: eggplant
   });
-  // z line
-  new Zdog.Shape({
-    addTo: zCircle,
-    path: [{}, zCircle.translate.copy().multiply({ z: -1 })],
-    scale: 1 / zCircle.scale.z,
-    stroke: 2,
-    color: zCircle.color
-  });
 
-  let xRect = new Zdog.Rect({
-    addTo: zCircle,
-    translate: { x: 40 },
-    height: 20,
-    width: 20,
-    fill: true,
-    stroke: 8,
-    color: garnet
+  let xAnchor = new Zdog.Anchor({
+    addTo: zAnchor,
+    translate: { x: 40 }
   });
-  // z line
   new Zdog.Shape({
-    addTo: xRect,
-    path: [{}, xRect.translate.copy().multiply({ x: -1 })],
-    scale: 1 / xRect.scale.x,
+    addTo: xAnchor,
+    path: [{}, xAnchor.translate.copy().multiply({ x: -1 })],
+    scale: 1 / xAnchor.scale.x,
     stroke: 2,
-    color: xRect.color
+    color: garnet
   });
 
   let yTri = new Zdog.Polygon({
-    addTo: xRect,
+    addTo: xAnchor,
     translate: { y: -60 },
     radius: 10,
     sides: 3,
@@ -99,4 +87,4 @@ const modelling = () => {
   animate();
 };
 
-modelling();
+modellingAnchors();

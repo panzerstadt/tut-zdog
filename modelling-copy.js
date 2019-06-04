@@ -1,15 +1,16 @@
-const gettingStarted = () => {
-  // placed inside a function to make sure variables don't clash between files
-  // meaning 'to scope variables'
+const modellingCopy = () => {
+  const orange = "#e62";
+  const garnet = "#c25";
+  const eggplant = "#636";
+
   let isSpinning = true;
   let t = undefined;
 
   // create illo
   let illo = new Zdog.Illustration({
     // set canvas with selector
-    element: "#canvas1",
-    // zoom up 4x
-    zoom: 4,
+    element: "#canvas4",
+    zoom: 1,
     dragRotate: true,
     onDragStart: () => {
       isSpinning = false;
@@ -22,23 +23,19 @@ const gettingStarted = () => {
     }
   });
 
-  new Zdog.Ellipse({
+  let rect = new Zdog.Rect({
     addTo: illo,
-    diameter: 20,
-    translate: { z: 10 },
-    stroke: 5,
-    color: "#636"
+    height: 64,
+    width: 64,
+    translate: { x: -48 },
+    stroke: 16,
+    color: orange
   });
 
-  new Zdog.Rect({
-    addTo: illo,
-    width: 20,
-    height: 20,
-    // position further back
-    translate: { z: -10 },
-    stroke: 3,
-    color: "#e62",
-    fill: true
+  rect.copy({
+    // overwrite options
+    translate: { x: 48 },
+    color: eggplant
   });
 
   const animate = () => {
@@ -55,4 +52,4 @@ const gettingStarted = () => {
   animate();
 };
 
-gettingStarted();
+modellingCopy();

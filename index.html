@@ -11,8 +11,7 @@
         flex-direction: column;
         align-items: center;
       }
-      .zdog-canvas,
-      .zdog-canvas2 {
+      .zdog-canvas {
         background-color: blanchedalmond;
         border-radius: 15px;
         box-shadow: 1px 2px 12px rgba(0, 0, 0, 0.062);
@@ -22,11 +21,17 @@
   <body>
     <p>zdog tutorial code</p>
     <h1>Getting Started</h1>
-    <canvas class="zdog-canvas" width="240" height="240"></canvas>
+    <canvas class="zdog-canvas" id="canvas1" width="240" height="240"></canvas>
     <br />
-    <canvas class="zdog-canvas2" width="240" height="240"></canvas>
+    <canvas class="zdog-canvas" id="canvas2" width="240" height="240"></canvas>
+    <br />
+    <canvas class="zdog-canvas" id="canvas3" width="240" height="240"></canvas>
+    <br />
+    <canvas class="zdog-canvas" id="canvas4" width="240" height="240"></canvas>
     <script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
     <script src="getting-started.js"></script>
-    <script src="modelling-child-shapes-to-copying.js"></script>
+    <script src="modelling-child-shapes.js"></script>
+    <script src="modelling-anchors.js"></script>
+    <script src="modelling-copy.js"></script>
   </body>
 </html>
