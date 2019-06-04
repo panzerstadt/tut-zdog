@@ -50,7 +50,7 @@ const modelling = () => {
   });
 
   let xRect = new Zdog.Rect({
-    addTo: illo,
+    addTo: zCircle,
     translate: { x: 40 },
     height: 20,
     width: 20,
@@ -68,7 +68,7 @@ const modelling = () => {
   });
 
   let yTri = new Zdog.Polygon({
-    addTo: illo,
+    addTo: xRect,
     translate: { y: -60 },
     radius: 10,
     sides: 3,
