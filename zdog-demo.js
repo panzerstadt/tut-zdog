@@ -7,8 +7,20 @@ let illo = new Zdog.Illustration({
 new Zdog.Ellipse({
   addTo: illo,
   diameter: 80,
+  translate: { z: 40 },
   stroke: 20,
   color: "#636"
+});
+
+new Zdog.Rect({
+  addTo: illo,
+  width: 80,
+  height: 80,
+  // position further back
+  translate: { z: -40 },
+  stroke: 12,
+  color: "#e62",
+  fill: true
 });
 
 const animate = () => {
