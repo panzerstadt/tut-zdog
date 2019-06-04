@@ -11,4 +11,12 @@ new Zdog.Ellipse({
   color: "#636"
 });
 
-illo.updateRenderGraph();
+const animate = () => {
+  // rotate illo each frame
+  illo.rotate.y += 0.03;
+  illo.updateRenderGraph();
+
+  requestAnimationFrame(animate);
+};
+
+animate();
